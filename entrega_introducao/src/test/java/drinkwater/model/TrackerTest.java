@@ -7,7 +7,9 @@ public class TrackerTest {
 
     @Test
     public void assertProgressTest(){
-        Tracker tracker = new TrackerImpl();
+        TrackerImpl tracker = new TrackerImpl();
+        tracker.setWaterConsumed(100.0);
+        tracker.setGoal(1000.0);
         Assertions.assertEquals(tracker.getProgress(), ((Double)10.0));
     }
 
