@@ -44,6 +44,7 @@ public class TrackerTest {
     @Test
     public void testValidAddConsume(){
         TrackerImpl tracker = new TrackerImpl();
+        tracker.setGoal(1000.0);
         Assertions.assertTrue(tracker.addWaterConsumed(1.0));
     }
 

@@ -22,8 +22,11 @@ public class TrackerImpl implements Tracker {
     }
 
     public Boolean setGoal(Double goal) {
+        if (goal < 0) {
+            return false;
+        }
         this.goal = goal;
-        return null;
+        return true;
     }
 
     public Double getWaterConsumed() {
@@ -37,11 +40,19 @@ public class TrackerImpl implements Tracker {
 
     @Override
     public Boolean addWaterConsumed(Double water) {
-        return null;
+        if (water < 0 || water > goal) {
+            return false;
+        }
+        return true;
     }
 
     @Override
     public Boolean removeWaterConsumed(Double water) {
-        return null;
+        if (water < 0 || water > goal) {
+            return false;
+        }
+        return true;
     }
+
+
 }
