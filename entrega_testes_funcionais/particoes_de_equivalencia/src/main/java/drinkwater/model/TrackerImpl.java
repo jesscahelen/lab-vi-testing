@@ -53,6 +53,7 @@ public class TrackerImpl implements Tracker {
 
     @Override
     public Boolean removeWaterConsumed(Double water) {
+        
         if (water < 0 || water > goal || this.waterConsumed == null) {
             return false;
         }
